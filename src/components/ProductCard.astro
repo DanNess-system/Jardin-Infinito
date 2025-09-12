@@ -1,0 +1,84 @@
+---
+export interface Props {
+  titulo: string;
+  descripcion: string;
+  imagen: string;
+  precioOriginal: number;
+  precioDescuento: number;
+}
+
+const { titulo, descripcion, imagen, precioOriginal, precioDescuento } = Astro.props;
+
+// Calcular el porcentaje de descuento
+const descuentoPorcentaje = Math.round(((precioOriginal - precioDescuento) / precioOriginal) * 100);
+---
+
+<div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+    <!-- Badge de descuento -->
+    <div class="absolute top-4 right-4 z-10">
+        <span class="bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold px-3 py-1 rounded-full shadow-lg animate-pulse">
+            -{descuentoPorcentaje}%
+        </span>
+    </div>
+    
+    <!-- Contenedor de imagen con efecto overlay -->
+    <div class="relative overflow-hidden bg-gradient-to-br from-green-50 to-green-200 p-6">
+        <img 
+            src={imagen} 
+            alt={titulo} 
+            class="w-full h-64 object-contain object-center rounded-xl transition-transform duration-700 group-hover:scale-110"
+        >
+        <!-- Overlay verde sutil que aparece en hover -->
+        <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+    </div>
+    
+    <!-- Contenido de la card -->
+    <div class="p-6 space-y-4">
+        <!-- Título con línea decorativa -->
+        <div class="space-y-2">
+            <h3 class="text-xl font-bold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                {titulo}
+            </h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+        </div>
+        
+        <!-- Descripción -->
+        <p class="text-gray-600 text-sm leading-relaxed line-clamp-3">
+            {descripcion}
+        </p>
+        
+        <!-- Contenedor de precios con mejor diseño -->
+        <div class="pt-4 border-t border-gray-100">
+            <div class="flex items-center justify-between">
+                <div class="space-y-1">
+                    <div class="flex items-baseline gap-3">
+                        <span class="text-3xl font-bold text-primary">
+                            ${precioDescuento.toLocaleString('es-MX')}
+                        </span>
+                        <span class="text-lg text-gray-400 line-through font-medium">
+                            ${precioOriginal.toLocaleString('es-MX')}
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-500 font-medium">Precio en pesos mexicanos</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón de acción -->
+        <!-- <button class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-xl hover:from-secondary hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-primary/30">
+            <span class="flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m4.5-5a1 1 0 100 2 1 1 0 000-2zm6 0a1 1 0 100 2 1 1 0 000-2z"/>
+                </svg>
+                Agregar al Carrito
+            </span>
+        </button> -->
+    </div>
+    
+    <!-- Elemento decorativo (hojas) -->
+    <div class="absolute -bottom-2 -right-2 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+        <svg class="w-20 h-20 text-primary" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+    </div>
+</div>
