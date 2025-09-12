@@ -1,0 +1,241 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/shared/Header.astro";
+import Footer from "../components/shared/Footer.astro";
+import Whatsapp from "../components/shared/Whatsapp.astro";
+import ProductCard from "../components/ProductCard.astro";
+
+// Datos extendidos de productos
+const productos = [
+    {
+        titulo: "Hule Tinto",
+        descripcion: "Hule Tinto es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
+        imagen: "/src/assets/plantas/hule_tinto.png",
+        precioOriginal: 600,
+        precioDescuento: 450
+    },
+    {
+        titulo: "Palma Cica",
+        descripcion: "La Palma Cica es una planta de interior muy apreciada por su belleza y facilidad de cuidado.",
+        imagen: "/src/assets/plantas/palma_cica.png",
+        precioOriginal: 950,
+        precioDescuento: 750
+    },
+    {
+        titulo: "Helechos Colgantes",
+        descripcion: "Los Helechos Colgantes son plantas ideales para interiores, aportando un toque de frescura y elegancia.",
+        imagen: "/src/assets/plantas/helechos_colgantes.png",
+        precioOriginal: 450,
+        precioDescuento: 320
+    },
+    {
+        titulo: "Cuna de Moisés",
+        descripcion: "La Cuna de Moisés es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
+        imagen: "/src/assets/plantas/cuna_de_moises.png",
+        precioOriginal: 750,
+        precioDescuento: 580
+    },
+    {
+        titulo: "Sansevieria",
+        descripcion: "También conocida como lengua de suegra, es perfecta para principiantes por su extrema resistencia.",
+        imagen: "/src/assets/plantas/hule_tinto.png",
+        precioOriginal: 400,
+        precioDescuento: 300
+    },
+    {
+        titulo: "Monstera Deliciosa",
+        descripcion: "Una planta tropical espectacular con hojas perforadas que la hacen muy decorativa.",
+        imagen: "/src/assets/plantas/palma_cica.png",
+        precioOriginal: 800,
+        precioDescuento: 650
+    },
+    {
+        titulo: "Pothos",
+        descripcion: "Planta colgante ideal para purificar el aire y decorar espacios con poca luz.",
+        imagen: "/src/assets/plantas/helechos_colgantes.png",
+        precioOriginal: 350,
+        precioDescuento: 280
+    },
+    {
+        titulo: "Ficus Benjamina",
+        descripcion: "Árbol de interior elegante que aporta un toque sofisticado a cualquier espacio.",
+        imagen: "/src/assets/plantas/cuna_de_moises.png",
+        precioOriginal: 1200,
+        precioDescuento: 950
+    },
+    {
+        titulo: "Aloe Vera",
+        descripcion: "Planta suculenta con propiedades medicinales, perfecta para el hogar.",
+        imagen: "/src/assets/plantas/hule_tinto.png",
+        precioOriginal: 300,
+        precioDescuento: 220
+    },
+    {
+        titulo: "Pachira Aquatica",
+        descripcion: "Conocida como árbol del dinero, trae buena suerte y es fácil de cuidar.",
+        imagen: "/src/assets/plantas/palma_cica.png",
+        precioOriginal: 700,
+        precioDescuento: 550
+    },
+    {
+        titulo: "Calathea",
+        descripcion: "Planta con hojas decorativas espectaculares, ideal para interiores con luz indirecta.",
+        imagen: "/src/assets/plantas/helechos_colgantes.png",
+        precioOriginal: 500,
+        precioDescuento: 400
+    },
+    {
+        titulo: "Zamioculca",
+        descripcion: "Planta casi indestructible, perfecta para oficinas y espacios con poca luz.",
+        imagen: "/src/assets/plantas/cuna_de_moises.png",
+        precioOriginal: 450,
+        precioDescuento: 350
+    }
+];
+
+// Categorías de productos
+const categorias = [
+    "Todas",
+    "Interior",
+    "Exterior", 
+    "Suculentas",
+    "Colgantes",
+    "Purificadoras"
+];
+---
+
+<Layout>
+    <Whatsapp />
+    
+    <!-- Header simplificado -->
+    <header class="bg-gradient-to-r from-primary to-secondary py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3 text-white hover:scale-105 transition-transform duration-300">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="text-xl font-semibold">Volver al Inicio</span>
+                </a>
+                
+                <div class="flex items-center gap-3">
+                    <img src="/src/assets/logo-white.png" alt="Logo" class="h-10">
+                    <h1 class="text-white text-2xl font-bold">Nuestros Productos</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="py-16 bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-6">
+            
+            <!-- Título y descripción -->
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+                    Catálogo Completo
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Explora nuestra colección completa de plantas para interior y exterior. Cada planta viene con garantía de calidad y consejos de cuidado personalizados.
+                </p>
+            </div>
+
+            <!-- Filtros de categoría -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                {categorias.map(categoria => (
+                    <button class="categoria-btn bg-white text-gray-700 px-6 py-3 rounded-full border-2 border-gray-200 hover:border-primary hover:text-primary transition-all duration-300 font-medium">
+                        {categoria}
+                    </button>
+                ))}
+            </div>
+
+            <!-- Grid de productos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {productos.map((producto, index) => (
+                    <div class="animate__animated animate__fadeInUp" style={`animation-delay: ${(index % 8) * 0.1}s;`}>
+                        <ProductCard 
+                            titulo={producto.titulo}
+                            descripcion={producto.descripcion}
+                            imagen={producto.imagen}
+                            precioOriginal={producto.precioOriginal}
+                            precioDescuento={producto.precioDescuento}
+                        />
+                    </div>
+                ))}
+            </div>
+
+            <!-- Información adicional -->
+            <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">¿Necesitas ayuda eligiendo?</h3>
+                        <p class="text-gray-600 mb-6">
+                            Nuestro equipo de expertos está aquí para ayudarte a encontrar la planta perfecta para tu espacio. Te ofrecemos:
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Asesoramiento personalizado gratuito
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Guías de cuidado incluidas
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Entrega a domicilio disponible
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Garantía de 30 días
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
+                            <h4 class="text-2xl font-bold mb-4">¡Contáctanos!</h4>
+                            <p class="mb-6">Estamos aquí para ayudarte a crear tu jardín soñado</p>
+                            <a href="/#contactanos" class="inline-block bg-white text-primary font-semibold py-3 px-6 rounded-xl hover:bg-gray-100 transition-all duration-300">
+                                Hablar con un Experto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+    // Funcionalidad de filtros (básica)
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoryBtns = document.querySelectorAll('.categoria-btn');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remover clase activa de todos los botones
+                categoryBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'border-primary');
+                    b.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+                });
+                
+                // Agregar clase activa al botón clickeado
+                this.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
+                this.classList.add('bg-primary', 'text-white', 'border-primary');
+                
+                // Aquí puedes agregar la lógica de filtrado real
+                console.log('Filtro seleccionado:', this.textContent);
+            });
+        });
+    });
+</script>

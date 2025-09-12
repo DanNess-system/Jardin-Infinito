@@ -58,69 +58,14 @@ const productos = [
         imagen: "/src/assets/plantas/cuna_de_moises.png",
         precioOriginal: 750,
         precioDescuento: 580
-    },
-    {
-        titulo: "Hule Tinto",
-        descripcion: "Hule Tinto es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/hule_tinto.png",
-        precioOriginal: 600,
-        precioDescuento: 450
-    },
-    {
-        titulo: "Palma Cica",
-        descripcion: "La Palma Cica es una planta de interior muy apreciada por su belleza y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/palma_cica.png",
-        precioOriginal: 950,
-        precioDescuento: 750
-    },
-    {
-        titulo: "Helechos Colgantes",
-        descripcion: "Los Helechos Colgantes son plantas ideales para interiores, aportando un toque de frescura y elegancia.",
-        imagen: "/src/assets/plantas/helechos_colgantes.png",
-        precioOriginal: 450,
-        precioDescuento: 320
-    },
-    {
-        titulo: "Cuna de Moisés",
-        descripcion: "La Cuna de Moisés es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/cuna_de_moises.png",
-        precioOriginal: 750,
-        precioDescuento: 580
-    },
-    {
-        titulo: "Hule Tinto",
-        descripcion: "Hule Tinto es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/hule_tinto.png",
-        precioOriginal: 600,
-        precioDescuento: 450
-    },
-    {
-        titulo: "Palma Cica",
-        descripcion: "La Palma Cica es una planta de interior muy apreciada por su belleza y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/palma_cica.png",
-        precioOriginal: 950,
-        precioDescuento: 750
-    },
-    {
-        titulo: "Helechos Colgantes",
-        descripcion: "Los Helechos Colgantes son plantas ideales para interiores, aportando un toque de frescura y elegancia.",
-        imagen: "/src/assets/plantas/helechos_colgantes.png",
-        precioOriginal: 450,
-        precioDescuento: 320
-    },
-    {
-        titulo: "Cuna de Moisés",
-        descripcion: "La Cuna de Moisés es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/cuna_de_moises.png",
-        precioOriginal: 750,
-        precioDescuento: 580
-    },
+    }
 ];
 ---
 
-<section class="container mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-8 text-primary">Nuestros Productos</h2>
-    <div class="grid grid-cols-4 gap-4">
+<section id="productos" class="container mx-auto px-2.5 my-10">
+    <h2 class="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-10 text-center">¡Nuestros Productos Destacados!</h2>
+    <p class="text-gray-600 mb-10 text-center">Descubre nuestra selección de plantas únicas y de alta calidad, perfectas para cualquier espacio.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {productos.map(producto => (
             <ProductCard 
                 titulo={producto.titulo}
@@ -130,5 +75,30 @@ const productos = [
                 precioDescuento={producto.precioDescuento}
             />
         ))}
+    </div>
+    
+    <!-- Botón Ver todos los productos -->
+    <div class="text-center mt-12">
+        <a href="/productos" class="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-8 rounded-2xl hover:from-secondary hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Tallo principal -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22V10"/>
+                <!-- Hojas izquierda -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10c-3-2-6-1-6 2s3 4 6 2"/>
+                <!-- Hojas derecha -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10c3-2 6-1 6 2s-3 4-6 2"/>
+                <!-- Hojas superiores izquierda -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-2-3-5-3-5 0s3 3 5 0"/>
+                <!-- Hojas superiores derecha -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c2-3 5-3 5 0s-3 3-5 0"/>
+                <!-- Maceta -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 22h8l-1-3H9l-1 3z"/>
+                <line x1="7" y1="22" x2="17" y2="22" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            Ver todos los productos
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+        </a>
     </div>
 </section>
