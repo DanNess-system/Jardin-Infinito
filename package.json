@@ -4,14 +4,34 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "start": "astro preview",
+    "build": "prisma generate && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "postinstall": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@astrojs/node": "^9.4.3",
+    "@astrojs/vercel": "^8.2.7",
+    "@prisma/client": "^6.16.1",
     "@tailwindcss/vite": "^4.1.13",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express-session": "^1.18.2",
+    "@types/multer": "^2.0.0",
     "animate.css": "^4.1.1",
     "astro": "^5.13.7",
+    "bcryptjs": "^3.0.2",
+    "cookie": "^1.0.2",
+    "express-session": "^1.18.2",
+    "lucia": "^3.2.2",
+    "multer": "^2.0.2",
+    "oslo": "^1.2.1",
+    "prisma": "^6.16.1",
     "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5"
   }
 }
