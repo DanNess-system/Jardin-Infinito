@@ -3,9 +3,10 @@
 ## 🌐 URLs del Proyecto
 
 ### Producción
-- **URL Principal**: https://jardin-infinito-oi0frlmg0-nestor-basave-davalos-projects.vercel.app
-- **Panel Admin**: https://jardin-infinito-oi0frlmg0-nestor-basave-davalos-projects.vercel.app/admin
-- **Login**: https://jardin-infinito-oi0frlmg0-nestor-basave-davalos-projects.vercel.app/login
+- **URL Vercel**: https://jardin-infinito-8z5h8onpv-nestor-basave-davalos-projects.vercel.app
+- **Dominio Personalizado**: (Configura tu dominio en Vercel Dashboard)
+- **Panel Admin**: /admin
+- **Login**: /login
 
 ## 🔧 Configuración Pendiente
 
@@ -23,11 +24,18 @@ NODE_ENV=production
 2. Crea una nueva base de datos PostgreSQL
 3. Vercel agregará automáticamente las variables de entorno de la DB
 
+### Dominio Personalizado:
+1. Ve a: https://vercel.com/nestor-basave-davalos-projects/jardin-infinito/settings/domains
+2. Agrega tu dominio personalizado
+3. Configura DNS según las instrucciones de Vercel
+4. Verifica el dominio (24-48 horas)
+
 ## 📝 Credenciales de Admin
 - Email: admin@jardininfinito.com
 - Contraseña: admin123
 
 ## 🚀 Próximos Pasos
-1. Configurar variables de entorno
-2. Configurar base de datos PostgreSQL
-3. Re-desplegar el proyecto
+1. ✅ Configurar variables de entorno
+2. ✅ Configurar base de datos PostgreSQL
+3. ✅ Agregar dominio personalizado
+4. ✅ Re-desplegar el proyecto

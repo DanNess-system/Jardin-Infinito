@@ -3,14 +3,32 @@ export interface Props {
   titulo: string;
   descripcion: string;
   imagen: string;
+  imagenesAdicionales?: Array<{url: string, alt: string, title: string}>;
   precioOriginal: number;
   precioDescuento: number;
+  stock?: number;
+  categoria?: string;
 }
 
-const { titulo, descripcion, imagen, precioOriginal, precioDescuento } = Astro.props;
+const { 
+  titulo, 
+  descripcion, 
+  imagen, 
+  imagenesAdicionales = [], 
+  precioOriginal, 
+  precioDescuento,
+  stock = 0,
+  categoria = ''
+} = Astro.props;
 
 // Calcular el porcentaje de descuento
 const descuentoPorcentaje = Math.round(((precioOriginal - precioDescuento) / precioOriginal) * 100);
+
+// Crear array de todas las imágenes (principal + adicionales)
+const todasLasImagenes = [
+  { url: imagen, alt: titulo, title: titulo },
+  ...imagenesAdicionales
+];
 ---
 
 <div class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
@@ -21,15 +39,73 @@ const descuentoPorcentaje = Math.round(((precioOriginal - precioDescuento) / pre
         </span>
     </div>
     
-    <!-- Contenedor de imagen con efecto overlay -->
-    <div class="relative overflow-hidden bg-[#f0f0f0] p-6">
-        <img 
-            src={imagen} 
-            alt={titulo} 
-            class="w-full h-64 object-contain object-center rounded-xl transition-transform duration-700 group-hover:scale-110"
-        >
+    <!-- Contenedor de imagen con galería y efectos -->
+    <div class="relative overflow-hidden bg-[#f0f0f0]">
+        {todasLasImagenes.length > 1 ? (
+            <!-- Galería de imágenes con slider -->
+            <div class="image-gallery relative">
+                <div class="image-container">
+                    {todasLasImagenes.map((img, index) => (
+                        <img 
+                            src={img.url} 
+                            alt={img.alt || titulo} 
+                            class={`gallery-image w-full h-64 object-contain object-center rounded-xl transition-all duration-700 group-hover:scale-110 ${index === 0 ? 'active' : ''}`}
+                            data-index={index}
+                        />
+                    ))}
+                </div>
+                
+                {/* Indicadores de imagen */}
+                {todasLasImagenes.length > 1 && (
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        {todasLasImagenes.map((_, index) => (
+                            <button 
+                                class={`image-indicator w-3 h-3 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white shadow-lg' : 'bg-white/50'}`}
+                                data-index={index}
+                            />
+                        ))}
+                    </div>
+                )}
+                
+                {/* Navegación */}
+                {todasLasImagenes.length > 1 && (
+                    <>
+                        <button class="gallery-nav prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button class="gallery-nav next absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </>
+                )}
+            </div>
+        ) : (
+            <!-- Imagen única -->
+            <img 
+                src={imagen} 
+                alt={titulo} 
+                class="w-full h-64 object-contain object-center rounded-xl transition-transform duration-700 group-hover:scale-110"
+            />
+        )}
         <!-- Overlay verde sutil que aparece en hover -->
         <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+        
+        {/* Badge de stock */}
+        {stock !== undefined && (
+            <div class="absolute top-4 left-4 z-10">
+                <span class={`text-xs font-medium px-2 py-1 rounded-full ${
+                    stock > 0 
+                        ? 'bg-green-100 text-green-800 border border-green-200' 
+                        : 'bg-red-100 text-red-800 border border-red-200'
+                }`}>
+                    {stock > 0 ? `Stock: ${stock}` : 'Agotado'}
+                </span>
+            </div>
+        )}
     </div>
     
     <!-- Contenido de la card -->
@@ -82,3 +158,91 @@ const descuentoPorcentaje = Math.round(((precioOriginal - precioDescuento) / pre
         </svg>
     </div>
 </div>
+
+<style>
+    .image-gallery .gallery-image {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .image-gallery .gallery-image.active {
+        display: block;
+        position: relative;
+    }
+    
+    .image-gallery .image-container {
+        position: relative;
+        height: 16rem; /* h-64 equivalent */
+    }
+    
+    .image-indicator.active {
+        background-color: white !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script>
+    // Funcionalidad de galería de imágenes
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleries = document.querySelectorAll('.image-gallery');
+        
+        galleries.forEach(gallery => {
+            const images = gallery.querySelectorAll('.gallery-image');
+            const indicators = gallery.querySelectorAll('.image-indicator');
+            const prevBtn = gallery.querySelector('.gallery-nav.prev');
+            const nextBtn = gallery.querySelector('.gallery-nav.next');
+            let currentIndex = 0;
+            
+            // Función para mostrar imagen
+            function showImage(index: number) {
+                // Ocultar todas las imágenes
+                images.forEach(img => img.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Mostrar imagen actual
+                if (images[index]) {
+                    images[index].classList.add('active');
+                }
+                if (indicators[index]) {
+                    indicators[index].classList.add('active');
+                }
+                
+                currentIndex = index;
+            }
+            
+            // Event listeners para indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showImage(index);
+                });
+            });
+            
+            // Event listeners para navegación
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+                    showImage(newIndex);
+                });
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                    showImage(newIndex);
+                });
+            }
+            
+            // Auto-advance (opcional)
+            setInterval(() => {
+                if (images.length > 1) {
+                    const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+                    showImage(newIndex);
+                }
+            }, 5000); // Cambiar cada 5 segundos
+        });
+    });
+</script>

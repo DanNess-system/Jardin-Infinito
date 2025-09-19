@@ -4,60 +4,219 @@ import Header from "../components/shared/Header.astro";
 import Footer from "../components/shared/Footer.astro";
 import Whatsapp from "../components/shared/Whatsapp.astro";
 import ProductCard from "../components/ProductCard.astro";
+import defaultImage from "../assets/JardinInfinito.png";
 
-// Obtener productos desde la API
-let productos = [];
-try {
-  const response = await fetch(`${Astro.url.origin}/api/products?activo=true`);
-  const data = await response.json();
-  
-  if (data.success) {
-    productos = data.data;
+// Función para obtener productos desde WordPress API
+async function getWordPressProducts() {
+  try {
+    const response = await fetch('https://api.jardininfinito.com/wp-json/wp/v2/productos');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching WordPress products:', error);
+    return [];
   }
+}
+
+// Función para obtener imagen desde Media Library con mejor manejo de errores
+async function getMediaImage(mediaId: number) {
+  if (!mediaId || mediaId === 0) return null;
+  
+  try {
+    const response = await fetch(`https://api.jardininfinito.com/wp-json/wp/v2/media/${mediaId}`);
+    if (!response.ok) {
+      console.warn(`No se pudo obtener la imagen con ID ${mediaId}: ${response.status}`);
+      return null;
+    }
+    
+    const media = await response.json();
+    
+    // Validar que la respuesta tenga los campos necesarios
+    if (!media.source_url) {
+      console.warn(`Imagen con ID ${mediaId} no tiene URL válida`);
+      return null;
+    }
+    
+    return {
+      url: media.source_url,
+      alt: media.alt_text || media.title?.rendered || '',
+      title: media.title?.rendered || `Imagen ${mediaId}`
+    };
+  } catch (error) {
+    console.error(`Error obteniendo imagen ${mediaId}:`, error);
+    return null;
+  }
+}
+
+// Función auxiliar para obtener todas las imágenes de un producto
+async function obtenerImagenesProducto(product: any) {
+  const imagenes: Array<{url: string, alt: string, title: string}> = [];
+  console.log(`  Obteniendo imágenes para producto ID: ${product.id}`);
+  
+  // 1. Imagen destacada (featured_media)
+  if (product.featured_media && product.featured_media !== 0) {
+    console.log(`  Buscando imagen destacada con ID: ${product.featured_media}`);
+    const featuredImage = await getMediaImage(product.featured_media);
+    if (featuredImage) {
+      console.log(`  ✅ Imagen destacada obtenida: ${featuredImage.url}`);
+      imagenes.push(featuredImage);
+    } else {
+      console.log(`  ❌ No se pudo obtener imagen destacada`);
+    }
+  } else {
+    console.log(`  ⚠️ No hay imagen destacada (featured_media = ${product.featured_media})`);
+  }
+  
+  // 2. Imágenes adicionales de ACF (escalable hasta 20 imágenes)
+  for (let i = 1; i <= 20; i++) {
+    const campoImagen = `imagen_adicional_${i}`;
+    if (product.acf?.[campoImagen]) {
+      console.log(`  Buscando imagen adicional ${i} con ID: ${product.acf[campoImagen]}`);
+      const img = await getMediaImage(product.acf[campoImagen]);
+      if (img) {
+        console.log(`  ✅ Imagen adicional ${i} obtenida: ${img.url}`);
+        imagenes.push(img);
+      } else {
+        console.log(`  ❌ No se pudo obtener imagen adicional ${i}`);
+      }
+    }
+  }
+  
+  console.log(`  Total de imágenes obtenidas: ${imagenes.length}`);
+  return imagenes;
+}
+
+// Obtener productos desde WordPress API
+let productos = [];
+let categorias = ["Todas"];
+
+try {
+  const wpProducts = await getWordPressProducts();
+  
+  // Transformar datos de WordPress al formato esperado
+  for (const product of wpProducts) {
+    console.log(`\n=== Procesando producto: ${product.title.rendered} ===`);
+    console.log('Featured media:', product.featured_media);
+    console.log('ACF data:', product.acf);
+    
+    // Obtener todas las imágenes del producto
+    const imagenes = await obtenerImagenesProducto(product);
+    console.log('Imágenes obtenidas:', imagenes);
+    
+    // Determinar imagen principal e imágenes adicionales
+    let imagen = defaultImage.src; // Imagen por defecto
+    let imagenesAdicionales: Array<{url: string, alt: string, title: string}> = [];
+    
+    if (imagenes.length > 0) {
+      // Usar la primera imagen real como principal
+      imagen = imagenes[0].url;
+      console.log('Imagen principal seleccionada:', imagen);
+      // El resto como adicionales
+      imagenesAdicionales = imagenes.slice(1);
+    } else {
+      console.log('⚠️ No se encontraron imágenes, usando imagen por defecto');
+    }
+    
+    productos.push({
+      id: product.id,
+      titulo: product.title.rendered,
+      descripcion: product.content.rendered.replace(/<[^>]*>/g, '').trim() || 'Sin descripción',
+      imagen: imagen,
+      imagenesAdicionales: imagenesAdicionales,
+      precioOriginal: product.acf?.precio || 0,
+      precioDescuento: product.acf?.precio_descuento || 0, // Ajustar según tu configuración ACF
+      categoria: product.acf?.categoria || 'General',
+      stock: product.acf?.stock || 0,
+      descripcionCorta: product.acf?.descripcion_corta || '',
+      // Información completa del producto para debug
+      acfData: product.acf,
+      wordpressData: product
+    });
+  }
+    
+  // Extraer categorías únicas
+  const categoriasUnicas = [...new Set(productos.map(p => p.categoria))];
+  categorias = ["Todas", ...categoriasUnicas];
+    
+  // Debug: Mostrar en consola el primer producto para verificar estructura
+  if (productos.length > 0) {
+    console.log('Primer producto obtenido:', productos[0]);
+    console.log('ACF data del primer producto:', productos[0].acfData);
+  }
+    
 } catch (error) {
-  console.error('Error obteniendo productos:', error);
+  console.error('Error obteniendo productos desde WordPress:', error);
   // Fallback con productos estáticos
   productos = [
     {
+        id: 1,
         titulo: "Hule Tinto",
         descripcion: "Hule Tinto es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/hule_tinto.png",
+        imagen: defaultImage.src,
+        imagenesAdicionales: [],
         precioOriginal: 600,
-        precioDescuento: 450
+        precioDescuento: 450,
+        categoria: "Interior",
+        stock: 10,
+        descripcionCorta: "Planta resistente ideal para principiantes",
+        acfData: {},
+        wordpressData: {}
     },
     {
+        id: 2,
         titulo: "Palma Cica",
         descripcion: "La Palma Cica es una planta de interior muy apreciada por su belleza y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/palma_cica.png",
+        imagen: defaultImage.src,
+        imagenesAdicionales: [],
         precioOriginal: 950,
-        precioDescuento: 750
+        precioDescuento: 750,
+        categoria: "Interior",
+        stock: 5,
+        descripcionCorta: "Elegante palma para decoración",
+        acfData: {},
+        wordpressData: {}
     },
     {
+        id: 3,
         titulo: "Helechos Colgantes",
         descripcion: "Los Helechos Colgantes son plantas ideales para interiores, aportando un toque de frescura y elegancia.",
-        imagen: "/src/assets/plantas/helechos_colgantes.png",
+        imagen: defaultImage.src,
+        imagenesAdicionales: [],
         precioOriginal: 450,
-        precioDescuento: 320
+        precioDescuento: 320,
+        categoria: "Colgantes",
+        stock: 8,
+        descripcionCorta: "Perfectos para espacios elevados",
+        acfData: {},
+        wordpressData: {}
     },
     {
+        id: 4,
         titulo: "Cuna de Moisés",
         descripcion: "La Cuna de Moisés es una planta de interior muy popular, conocida por su resistencia y facilidad de cuidado.",
-        imagen: "/src/assets/plantas/cuna_de_moises.png",
+        imagen: defaultImage.src,
+        imagenesAdicionales: [],
         precioOriginal: 750,
-        precioDescuento: 580
+        precioDescuento: 580,
+        categoria: "Interior",
+        stock: 12,
+        descripcionCorta: "Planta con hojas únicas",
+        acfData: {},
+        wordpressData: {}
     }
   ];
-}
-
-// Categorías de productos
-const categorias = [
+  
+  categorias = [
     "Todas",
     "Interior",
     "Exterior", 
     "Suculentas",
     "Colgantes",
     "Purificadoras"
-];
+  ];
+}
 ---
 
 <Layout>
@@ -75,7 +234,7 @@ const categorias = [
                 </a>
                 
                 <div class="flex items-center gap-3">
-                    <img src="/src/assets/logo-white.png" alt="Logo" class="h-10">
+                    <img src="/logo-white.png" alt="Logo" class="h-10">
                     <h1 class="text-white text-2xl font-bold">Nuestros Productos</h1>
                 </div>
             </div>
@@ -113,8 +272,11 @@ const categorias = [
                             titulo={producto.titulo}
                             descripcion={producto.descripcion}
                             imagen={producto.imagen}
+                            imagenesAdicionales={producto.imagenesAdicionales}
                             precioOriginal={producto.precioOriginal}
                             precioDescuento={producto.precioDescuento}
+                            stock={producto.stock}
+                            categoria={producto.categoria}
                         />
                     </div>
                 ))}
