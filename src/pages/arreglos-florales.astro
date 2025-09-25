@@ -1,0 +1,1019 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/shared/Footer.astro";
+import Whatsapp from "../components/shared/Whatsapp.astro";
+---
+
+<Layout title="Arreglos Florales - Jardín Infinito">
+    <Whatsapp />
+
+    <!-- Header con navegación -->
+    <header class="bg-gradient-to-r from-[#2b4426] to-[#447a36] py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a
+                    href="/"
+                    class="flex items-center gap-3 text-white hover:scale-105 transition-transform duration-300"
+                >
+                    <svg
+                        class="w-8 h-8"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span class="text-xl font-semibold">Volver al Inicio</span>
+                </a>
+
+                <div class="flex items-center gap-3">
+                    <img src="/logo-white.png" alt="Logo" class="h-10" />
+                    <h1 class="text-white text-2xl font-bold">
+                        Arreglos Florales
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="relative py-20 bg-[url('/linea-arreglos.png')] bg-cover bg-center overflow-hidden"
+    >
+        <div class="absolute inset-0">
+            <div class="bg-pattern opacity-10"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div
+                    class="backdrop-blur-sm bg-white/50 rounded-2xl p-8 shadow-2xl"
+                >
+                    <h2
+                        class="text-6xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent mb-6 animate__animated animate__fadeInDown"
+                    >
+                        🌺 Arreglos Florales Únicos 🌺
+                    </h2>
+                    <p
+                        class="text-xl text-gray-700 leading-relaxed mb-8 animate__animated animate__fadeInUp animate__delay-1s"
+                    >
+                        Cada arreglo floral cuenta una historia. Desde
+                        composiciones clásicas hasta diseños vanguardistas,
+                        creamos arte floral que transmite emociones y embellece
+                        cualquier espacio con naturaleza y color.
+                    </p>
+                    <div
+                        class="animate__animated animate__bounce animate__infinite"
+                    >
+                        <div
+                            class="inline-block bg-white rounded-full p-4 shadow-lg"
+                        >
+                            <svg
+                                class="w-12 h-12 text-violet-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"
+                                ></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de trabajos -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Galería de Arreglos Florales
+            </h3>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Fila 1 -->
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-romantico.jpg"
+                        alt="Ramo romántico"
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Ramo Romántico</h4>
+                            <p class="text-sm">Rosas rojas y baby's breath</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-moderno.jpg"
+                        alt="Composición moderna"
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Estilo Moderno</h4>
+                            <p class="text-sm">Proteas y follaje tropical</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-corporativo.jpg"
+                        alt="Arreglo corporativo"
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Corporativo</h4>
+                            <p class="text-sm">Lilies blancos y eucalipto</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-boda.jpg"
+                        alt="Bouquet de boda"
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Bouquet de Boda</h4>
+                            <p class="text-sm">Peonías y ranúnculos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-romantico.jpg"
+                        alt="Corona floral"
+                        class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Corona Fúnebre</h4>
+                            <p class="text-sm">Crisantemos y follaje</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-primaveral.jpg"
+                        alt="Arreglo primaveral"
+                        class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Primaveral</h4>
+                            <p class="text-sm">Tulipanes y narcisos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-tropical.jpg"
+                        alt="Composición tropical"
+                        class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Tropical</h4>
+                            <p class="text-sm">Aves del paraíso y heliconias</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="relative group overflow-hidden rounded-2xl shadow-lg"
+                >
+                    <img
+                        src="arreglo-floral-preservadas.jpg"
+                        alt="Rosas preservadas"
+                        class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    >
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-lg font-bold">Preservado</h4>
+                            <p class="text-sm">Rosas eternas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Tipos de arreglos -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Tipos de Arreglos Florales
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ramos de mano -->
+                <div
+                    class="bg-gradient-to-br from-rose-50 to-pink-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Ramos de Mano
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Composiciones elegantes y portátiles, perfectas para
+                        regalar o decorar espacios íntimos.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-rose-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Ramos románticos</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-rose-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Bouquets de boda</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-rose-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Ramos de cumpleaños</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-rose-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Ramos de temporada</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-rose-600"
+                            >$350 - $850</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Arreglos en jarrones -->
+                <div
+                    class="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Arreglos en Jarrón
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Composiciones espectaculares en contenedores elegantes
+                        para decorar hogares y oficinas.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Jarrones de cristal</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Composiciones altas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Arreglos horizontales</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Diseños arquitectónicos</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-blue-600"
+                            >$480 - $1,200</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Coronas y guirnaldas -->
+                <div
+                    class="bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v1a1 1 0 001 1h6a1 1 0 001-1V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4M7 21a4 4 0 004-4v-1a1 1 0 011-1h2a1 1 0 011 1v1a4 4 0 004 4M7 21h10"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Coronas y Guirnaldas
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Decoraciones especiales para ocasiones ceremoniales y
+                        celebraciones importantes.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Coronas fúnebres</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Guirnaldas decorativas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Coronas de puertas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Arcos florales</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-emerald-600"
+                            >$650 - $1,800</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Composiciones corporativas -->
+                <div
+                    class="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-gray-600 to-slate-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Corporativos
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Arreglos profesionales y sofisticados para espacios de
+                        trabajo y eventos empresariales.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Recepciones de oficina</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Salas de juntas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Eventos corporativos</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Inauguraciones</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-gray-600"
+                            >$420 - $950</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Arreglos temáticos -->
+                <div
+                    class="bg-gradient-to-br from-orange-50 to-amber-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Temáticos
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Diseños únicos inspirados en temporadas, celebraciones
+                        especiales y temas personalizados.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Temporadas del año</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Fiestas tradicionales</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Diseños personalizados</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Colores específicos</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-orange-600"
+                            >$380 - $780</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Arreglos preservados -->
+                <div
+                    class="bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Preservados
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Flores eternas que mantienen su belleza por años,
+                        perfectas para recuerdos especiales.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Rosas eternas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Hortensias preservadas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Composiciones duraderas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Sin mantenimiento</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-purple-600"
+                            >$750 - $2,500</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Ocasiones especiales -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Arreglos para Cada Ocasión
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- San Valentín -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-red-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        San Valentín
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Ramos románticos con rosas rojas, peonías rosadas y
+                        toques dorados.
+                    </p>
+                    <div class="text-lg font-bold text-red-600">
+                        $450 - $950
+                    </div>
+                </div>
+
+                <!-- Día de las Madres -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        Día de las Madres
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Composiciones tiernas con flores suaves y colores
+                        pastel.
+                    </p>
+                    <div class="text-lg font-bold text-pink-600">
+                        $380 - $780
+                    </div>
+                </div>
+
+                <!-- Graduaciones -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        Graduaciones
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Arreglos elegantes que celebran logros académicos
+                        importantes.
+                    </p>
+                    <div class="text-lg font-bold text-blue-600">
+                        $320 - $650
+                    </div>
+                </div>
+
+                <!-- Condolencias -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-gray-400 to-slate-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        Condolencias
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Arreglos sobrios y elegantes para momentos de duelo.
+                    </p>
+                    <div class="text-lg font-bold text-gray-600">
+                        $450 - $1,200
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Proceso creativo -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Nuestro Proceso Creativo
+            </h3>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        1
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Inspiración
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Nos inspiramos en la ocasión, tus preferencias y la
+                        temporada para crear algo único.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        2
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Selección
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Elegimos las flores más frescas del mercado,
+                        considerando color, textura y durabilidad.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        3
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Composición
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Creamos la composición balanceando formas, colores y
+                        proporciones con técnica artística.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        4
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Presentación
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Finalizamos con toques especiales y presentación cuidada
+                        para máximo impacto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoniales -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Lo Que Dicen Nuestros Clientes
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gradient-to-br from-violet-50 to-purple-100 rounded-2xl p-8 shadow-lg"
+                >
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "El arreglo que hicieron para mi oficina es simplemente
+                        perfecto. Todos los días recibo comentarios positivos de
+                        los clientes sobre lo hermoso que se ve."
+                    </p>
+                    <div class="font-bold text-gray-800">
+                        Dr. Patricia Mendoza
+                    </div>
+                    <div class="text-sm text-gray-500">Consultorio Médico</div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-violet-50 to-purple-100 rounded-2xl p-8 shadow-lg"
+                >
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Mi esposa quedó encantada con el ramo de San Valentín.
+                        La calidad de las flores y el diseño superaron todas mis
+                        expectativas."
+                    </p>
+                    <div class="font-bold text-gray-800">Roberto Silva</div>
+                    <div class="text-sm text-gray-500">
+                        Cliente San Valentín
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-violet-50 to-purple-100 rounded-2xl p-8 shadow-lg"
+                >
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Los arreglos preservados son una inversión perfecta.
+                        Después de 8 meses siguen viéndose como nuevos y le dan
+                        vida a mi hogar."
+                    </p>
+                    <div class="font-bold text-gray-800">Lucía Herrera</div>
+                    <div class="text-sm text-gray-500">
+                        Decoración del Hogar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-[#2b4426] to-[#447a36]">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold text-white mb-6">
+                ¿Listo para Tu Arreglo Floral Perfecto?
+            </h3>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Déjanos crear el arreglo floral ideal para tu ocasión especial.
+                Cada composición es única y diseñada especialmente para ti.
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+                <a
+                    href="https://wa.me/5215512345678?text=Hola! Me interesan los arreglos florales personalizados. ¿Pueden ayudarme?"
+                    class="inline-flex items-center gap-3 bg-white text-violet-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                        ></path>
+                    </svg>
+                    Solicitar Presupuesto
+                </a>
+
+                <a
+                    href="mailto:arreglos@jardininfinito.com"
+                    class="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white hover:text-violet-600 transition-all duration-300 transform hover:scale-105"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        ></path>
+                    </svg>
+                    Enviar Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+</Layout>
+
+<style>
+    .bg-pattern {
+        background-image: radial-gradient(
+            circle at 1px 1px,
+            rgba(139, 69, 190, 0.15) 1px,
+            transparent 0
+        );
+        background-size: 20px 20px;
+    }
+</style>
+
+<script>
+    // Animaciones en scroll
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate__fadeInUp");
+                }
+            });
+        });
+
+        document.querySelectorAll(".group").forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>

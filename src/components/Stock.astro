@@ -1,137 +1,18 @@
 ---
-import ProductCard from './ProductCard.astro';
-import defaultImage from "../assets/JardinInfinito.png";
-
-// Función para obtener productos desde WordPress API
-async function getWordPressProducts() {
-  try {
-    const response = await fetch('https://api.jardininfinito.com/wp-json/wp/v2/productos');
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching WordPress products:', error);
-    return [];
-  }
-}
-
-// Función para obtener imagen desde Media Library con mejor manejo de errores
-async function getMediaImage(mediaId: number) {
-  if (!mediaId || mediaId === 0) return null;
-  
-  try {
-    const response = await fetch(`https://api.jardininfinito.com/wp-json/wp/v2/media/${mediaId}`);
-    if (!response.ok) {
-      console.warn(`No se pudo obtener la imagen con ID ${mediaId}: ${response.status}`);
-      return null;
-    }
-    
-    const media = await response.json();
-    
-    // Validar que la respuesta tenga los campos necesarios
-    if (!media.source_url) {
-      console.warn(`Imagen con ID ${mediaId} no tiene URL válida`);
-      return null;
-    }
-    
-    return {
-      url: media.source_url,
-      alt: media.alt_text || media.title?.rendered || '',
-      title: media.title?.rendered || `Imagen ${mediaId}`
-    };
-  } catch (error) {
-    console.error(`Error obteniendo imagen ${mediaId}:`, error);
-    return null;
-  }
-}
-
-// Función auxiliar para obtener todas las imágenes de un producto
-async function obtenerImagenesProducto(product: any) {
-  const imagenes: Array<{url: string, alt: string, title: string}> = [];
-  
-  // 1. Imagen destacada (featured_media)
-  if (product.featured_media && product.featured_media !== 0) {
-    const featuredImage = await getMediaImage(product.featured_media);
-    if (featuredImage) {
-      imagenes.push(featuredImage);
-    }
-  }
-  
-  // 2. Imágenes adicionales de ACF (escalable hasta 20 imágenes)
-  for (let i = 1; i <= 20; i++) {
-    const campoImagen = `imagen_adicional_${i}`;
-    if (product.acf?.[campoImagen]) {
-      const img = await getMediaImage(product.acf[campoImagen]);
-      if (img) {
-        imagenes.push(img);
-      }
-    }
-  }
-  
-  return imagenes;
-}
-
-// Obtener productos destacados desde WordPress API
-let productos = [];
-try {
-  const wpProducts = await getWordPressProducts();
-  
-  // Filtrar y transformar productos destacados
-  for (const product of wpProducts) {
-    // Solo procesar productos que estén marcados como destacados
-    if (product.acf?.destacada === true) {
-      console.log(`\n=== Stock: Procesando producto destacado: ${product.title.rendered} ===`);
-      
-      // Obtener todas las imágenes del producto usando la función mejorada
-      const imagenes = await obtenerImagenesProducto(product);
-      console.log('Stock: Imágenes obtenidas:', imagenes.length);
-      
-      // Determinar imagen principal
-      let imagen = defaultImage.src; // Imagen por defecto
-      
-      if (imagenes.length > 0) {
-        // Usar la primera imagen real como principal
-        imagen = imagenes[0].url;
-        console.log('Stock: Imagen principal seleccionada:', imagen);
-      } else {
-        console.log('Stock: ⚠️ No se encontraron imágenes, usando imagen por defecto');
-      }
-      
-      productos.push({
-        titulo: product.title.rendered,
-        descripcion: product.content.rendered.replace(/<[^>]*>/g, '').trim() || 'Sin descripción',
-        imagen: imagen,
-        precioOriginal: product.acf?.precio || 0,
-        precioDescuento: product.acf?.precio_descuento || product.acf?.precio || 0,
-      });
-    }
-  }
-  
-  // Limitar a máximo 8 productos para la sección destacados
-  productos = productos.slice(0, 8);
-  
-} catch (error) {
-  console.error('Error obteniendo productos destacados desde WordPress:', error);
-  // Sin fallback - solo mostrar productos reales de WordPress con destacada: true
-  productos = [];
-}
+import ProductsLoader from './ProductsLoader';
 ---
 
 <section id="productos" class="container mx-auto px-5 my-10">
     <h2 class="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-10 text-center">¡Nuestros Productos Destacados!</h2>
     <p class="text-gray-600 mb-10 text-center">Descubre nuestra selección de plantas únicas y de alta calidad, perfectas para cualquier espacio.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {productos.map(producto => (
-            <ProductCard 
-                titulo={producto.titulo}
-                descripcion={producto.descripcion}
-                imagen={producto.imagen}
-                precioOriginal={producto.precioOriginal}
-                precioDescuento={producto.precioDescuento}
-            />
-        ))}
-    </div>
+    
+    <!-- Componente React para cargar productos destacados dinámicamente -->
+    <ProductsLoader 
+        showOnlyFeatured={true} 
+        maxProducts={8}
+        showFilters={false}
+        client:load
+    />
     
     <!-- Botón Ver todos los productos -->
     <div class="text-center mt-12">

@@ -11,30 +11,86 @@
     <div class="relative z-10 flex justify-around items-center gap-10 md:gap-40">
         <!-- Menú desktop (oculto en móvil) -->
         <div
-            class="hidden md:flex basis-3/4 border-primary border-t-2 border-r-2 border-b-2 rounded-r-full overflow-hidden backdrop-blur-sm bg-white/10"
+            class="hidden md:flex basis-3/4 border-primary border-t-2 border-r-2 border-b-2 rounded-r-full backdrop-blur-sm bg-white/10"
         >
             <ul
-                class="flex w-full justify-around items-center text-[18px] text-white font-medium"
+                class="flex w-full justify-around items-center text-[18px] text-white font-medium relative z-20"
             >
-                <li class="basis-1/4">
+                <!-- Productos con dropdown -->
+                <li class="basis-1/4 relative dropdown-container">
                     <a
-                        href="#productos"
-                        class="flex justify-center items-center w-full h-16 text-center hover:bg-primary hover:text-secondary transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s"
-                        >Productos</a
-                    >
+                        href="/productos"
+                        class="dropdown-trigger flex justify-center items-center w-full h-16 text-center hover:bg-primary hover:text-secondary transition-all duration-300 animate__animated animate__fadeInUp animate__delay-1s"
+                        >Productos 
+                        <svg class="dropdown-arrow w-4 h-4 ml-1 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <!-- Dropdown Productos -->
+                    <div class="dropdown-menu absolute top-full left-0 w-64 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-[100]">
+                        <div class="p-2">
+                            <a href="/productos" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Catálogo Completo</div>
+                                <div class="text-sm text-gray-600">Ver todos los productos</div>
+                            </a>
+                            <a href="/plantas-habitar" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Plantas para Habitar</div>
+                                <div class="text-sm text-gray-600">Plantas de interior</div>
+                            </a>
+                            <a href="/plantas-aromaticas" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Plantas Aromáticas</div>
+                                <div class="text-sm text-gray-600">Hierbas y plantas aromáticas</div>
+                            </a>
+                            <a href="/regala-planta" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Regala una Planta</div>
+                                <div class="text-sm text-gray-600">Regalos especiales</div>
+                            </a>
+                        </div>
+                    </div>
                 </li>
+                
+                <!-- Servicios con dropdown -->
+                <li class="basis-1/4 relative dropdown-container">
+                    <a
+                        href="#servicios"
+                        class="dropdown-trigger flex justify-center items-center w-full h-16 text-center hover:bg-primary hover:text-secondary transition-all duration-300 animate__animated animate__fadeInUp animate__delay-2s"
+                        >Servicios
+                        <svg class="dropdown-arrow w-4 h-4 ml-1 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </a>
+                    <!-- Dropdown Servicios -->
+                    <div class="dropdown-menu absolute top-full left-0 w-64 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl opacity-0 invisible transition-all duration-300 transform translate-y-2 z-[100]">
+                        <div class="p-2">
+                            <a href="/arreglos-florales" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Arreglos Florales</div>
+                                <div class="text-sm text-gray-600">Diseños únicos y creativos</div>
+                            </a>
+                            <a href="/centros-mesa" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Centros de Mesa</div>
+                                <div class="text-sm text-gray-600">Perfectos para eventos</div>
+                            </a>
+                            <a href="/ocasiones-especiales" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Ocasiones Especiales</div>
+                                <div class="text-sm text-gray-600">Bodas, quinces y más</div>
+                            </a>
+                            <a href="/linea-arreglos" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Línea Premium</div>
+                                <div class="text-sm text-gray-600">Arreglos exclusivos</div>
+                            </a>
+                            <a href="/plant-bar" class="block px-4 py-3 text-gray-800 hover:bg-primary/20 hover:text-primary rounded-lg transition-all duration-200">
+                                <div class="font-semibold">Plant Bar</div>
+                                <div class="text-sm text-gray-600">Experiencia única</div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="basis-1/4">
                     <a
                         href="#nosotros"
                         class="flex justify-center items-center w-full h-16 text-center hover:bg-primary hover:text-secondary transition-all duration-300 animate__animated animate__fadeInUp"
                         style="animation-delay: 1.5s;">Nosotras</a
-                    >
-                </li>
-                <li class="basis-1/4">
-                    <a
-                        href="#servicios"
-                        class="flex justify-center items-center w-full h-16 text-center hover:bg-primary hover:text-secondary transition-all duration-300 animate__animated animate__fadeInUp animate__delay-2s"
-                        >Servicios</a
                     >
                 </li>
                 <li class="basis-1/4">
@@ -116,85 +172,132 @@
         <!-- Opciones del menú móvil -->
         <nav class="px-6 py-8">
             <ul class="space-y-6">
+                <!-- Productos con submenu expandible -->
                 <li>
-                    <a
-                        href="#inicio"
-                        class="mobile-menu-link flex items-center text-white text-xl font-medium py-3 px-4 rounded-xl hover:bg-primary/20 transition-all duration-300"
-                    >
-                        <svg
-                            class="w-6 h-6 mr-4 text-primary"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                            ></path>
-                        </svg>
-                        Inicio
-                    </a>
+                    <div class="space-y-2">
+                        <button id="productos-toggle" class="mobile-menu-link flex items-center justify-between w-full text-white text-xl font-medium py-3 px-4 rounded-xl hover:bg-primary/20 transition-all duration-300">
+                            <div class="flex items-center">
+                                <svg
+                                    class="w-6 h-6 mr-4 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <!-- Tallo principal -->
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 22V10"></path>
+                                    <!-- Hojas izquierda -->
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 10c-3-2-6-1-6 2s3 4 6 2"></path>
+                                    <!-- Hojas derecha -->
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 10c3-2 6-1 6 2s-3 4-6 2"></path>
+                                    <!-- Hojas superiores izquierda -->
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8c-2-3-5-3-5 0s3 3 5 0"></path>
+                                    <!-- Hojas superiores derecha -->
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8c2-3 5-3 5 0s-3 3-5 0"></path>
+                                    <!-- Maceta -->
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M8 22h8l-1-3H9l-1 3z"></path>
+                                    <line
+                                        x1="7"
+                                        y1="22"
+                                        x2="17"
+                                        y2="22"
+                                        stroke="currentColor"
+                                        stroke-width="2"></line>
+                                </svg>
+                                Productos
+                            </div>
+                            <svg id="productos-arrow" class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="productos-submenu" class="max-h-0 overflow-hidden transition-all duration-300">
+                            <div class="pl-10 space-y-2">
+                                <a href="/productos" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Catálogo Completo
+                                </a>
+                                <a href="/plantas-habitar" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Plantas para Habitar
+                                </a>
+                                <a href="/plantas-aromaticas" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Plantas Aromáticas
+                                </a>
+                                <a href="/regala-planta" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Regala una Planta
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </li>
+                
+                <!-- Servicios con submenu expandible -->
                 <li>
-                    <a
-                        href="#productos"
-                        class="mobile-menu-link flex items-center text-white text-xl font-medium py-3 px-4 rounded-xl hover:bg-primary/20 transition-all duration-300"
-                    >
-                        <svg
-                            class="w-6 h-6 mr-4 text-primary"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <!-- Tallo principal -->
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 22V10"></path>
-                            <!-- Hojas izquierda -->
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 10c-3-2-6-1-6 2s3 4 6 2"></path>
-                            <!-- Hojas derecha -->
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 10c3-2 6-1 6 2s-3 4-6 2"></path>
-                            <!-- Hojas superiores izquierda -->
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8c-2-3-5-3-5 0s3 3 5 0"></path>
-                            <!-- Hojas superiores derecha -->
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M12 8c2-3 5-3 5 0s-3 3-5 0"></path>
-                            <!-- Maceta -->
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M8 22h8l-1-3H9l-1 3z"></path>
-                            <line
-                                x1="7"
-                                y1="22"
-                                x2="17"
-                                y2="22"
-                                stroke="currentColor"
-                                stroke-width="2"></line>
-                        </svg>
-                        Productos
-                    </a>
+                    <div class="space-y-2">
+                        <button id="servicios-toggle" class="mobile-menu-link flex items-center justify-between w-full text-white text-xl font-medium py-3 px-4 rounded-xl hover:bg-primary/20 transition-all duration-300">
+                            <div class="flex items-center">
+                                <svg
+                                    class="w-6 h-6 mr-4 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                                    ></path>
+                                </svg>
+                                Servicios
+                            </div>
+                            <svg id="servicios-arrow" class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="servicios-submenu" class="max-h-0 overflow-hidden transition-all duration-300">
+                            <div class="pl-10 space-y-2">
+                                <a href="/arreglos-florales" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Arreglos Florales
+                                </a>
+                                <a href="/centros-mesa" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Centros de Mesa
+                                </a>
+                                <a href="/ocasiones-especiales" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Ocasiones Especiales
+                                </a>
+                                <a href="/linea-arreglos" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Línea Premium
+                                </a>
+                                <a href="/plant-bar" class="block text-green-200 hover:text-white py-2 px-4 rounded transition-colors">
+                                    • Plant Bar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </li>
+
                 <li>
                     <a
                         href="#nosotros"
@@ -214,27 +317,6 @@
                             ></path>
                         </svg>
                         Nosotras
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href="#servicios"
-                        class="mobile-menu-link flex items-center text-white text-xl font-medium py-3 px-4 rounded-xl hover:bg-primary/20 transition-all duration-300"
-                    >
-                        <svg
-                            class="w-6 h-6 mr-4 text-primary"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                            ></path>
-                        </svg>
-                        Servicios
                     </a>
                 </li>
                 <li>
@@ -378,17 +460,65 @@
         const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
         const hamburgerLines = document.querySelectorAll(".hamburger-line");
 
+        // Funcionalidad de menús desplegables móviles
+        const productosToggle = document.getElementById("productos-toggle");
+        const serviciosToggle = document.getElementById("servicios-toggle");
+        const productosSubmenu = document.getElementById("productos-submenu");
+        const serviciosSubmenu = document.getElementById("servicios-submenu");
+        const productosArrow = document.getElementById("productos-arrow");
+        const serviciosArrow = document.getElementById("servicios-arrow");
+
+        // Funcionalidad de dropdowns desktop
+        const dropdownContainers = document.querySelectorAll('.dropdown-container');
+        
+        dropdownContainers.forEach(container => {
+            const trigger = container.querySelector('.dropdown-trigger');
+            const menu = container.querySelector('.dropdown-menu');
+            const arrow = container.querySelector('.dropdown-arrow');
+            let timeout;
+
+            // Función para mostrar el dropdown
+            function showDropdown() {
+                clearTimeout(timeout);
+                menu.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+                menu.classList.add('opacity-100', 'visible', 'translate-y-0');
+                arrow.style.transform = 'rotate(180deg)';
+            }
+
+            // Función para ocultar el dropdown
+            function hideDropdown() {
+                timeout = setTimeout(() => {
+                    menu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                    menu.classList.add('opacity-0', 'invisible', 'translate-y-2');
+                    arrow.style.transform = 'rotate(0deg)';
+                }, 100); // Pequeño delay para permitir movimiento del mouse
+            }
+
+            // Event listeners para el trigger
+            trigger.addEventListener('mouseenter', showDropdown);
+            trigger.addEventListener('mouseleave', hideDropdown);
+
+            // Event listeners para el dropdown menu
+            menu.addEventListener('mouseenter', () => {
+                clearTimeout(timeout);
+            });
+            menu.addEventListener('mouseleave', hideDropdown);
+        });
+
         // Función para abrir el menú
         function openMenu() {
-            mobileMenu.classList.remove("-translate-x-full");
-            mobileMenu.classList.add("translate-x-0");
+            if (mobileMenu) {
+                mobileMenu.classList.remove("-translate-x-full");
+                mobileMenu.classList.add("translate-x-0");
+            }
 
             // Animación del botón hamburguesa a X
-            hamburgerLines[0].style.transform =
-                "rotate(45deg) translate(5px, 5px)";
-            hamburgerLines[1].style.opacity = "0";
-            hamburgerLines[2].style.transform =
-                "rotate(-45deg) translate(7px, -6px)";
+            if (hamburgerLines.length >= 3) {
+                const lines = hamburgerLines as NodeListOf<HTMLElement>;
+                lines[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+                lines[1].style.opacity = "0";
+                lines[2].style.transform = "rotate(-45deg) translate(7px, -6px)";
+            }
 
             // Prevenir scroll del body
             document.body.style.overflow = "hidden";
@@ -396,24 +526,63 @@
 
         // Función para cerrar el menú
         function closeMenu() {
-            mobileMenu.classList.remove("translate-x-0");
-            mobileMenu.classList.add("-translate-x-full");
+            if (mobileMenu) {
+                mobileMenu.classList.remove("translate-x-0");
+                mobileMenu.classList.add("-translate-x-full");
+            }
 
             // Restaurar botón hamburguesa
-            hamburgerLines[0].style.transform = "none";
-            hamburgerLines[1].style.opacity = "1";
-            hamburgerLines[2].style.transform = "none";
+            if (hamburgerLines.length >= 3) {
+                const lines = hamburgerLines as NodeListOf<HTMLElement>;
+                lines[0].style.transform = "none";
+                lines[1].style.opacity = "1";
+                lines[2].style.transform = "none";
+            }
 
             // Restaurar scroll del body
             document.body.style.overflow = "auto";
         }
 
-        // Event listeners
+        // Función para toggle submenu
+        function toggleSubmenu(submenu: HTMLElement, arrow: HTMLElement) {
+            const isOpen = submenu.style.maxHeight && submenu.style.maxHeight !== "0px";
+            
+            if (isOpen) {
+                submenu.style.maxHeight = "0px";
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                submenu.style.maxHeight = submenu.scrollHeight + "px";
+                arrow.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // Event listeners para menú hamburguesa
         hamburgerBtn?.addEventListener("click", openMenu);
         closeMenuBtn?.addEventListener("click", closeMenu);
 
-        // Cerrar menú al hacer clic en los enlaces
+        // Event listeners para menús desplegables móviles
+        productosToggle?.addEventListener("click", () => {
+            if (productosSubmenu && productosArrow) {
+                toggleSubmenu(productosSubmenu, productosArrow);
+            }
+        });
+
+        serviciosToggle?.addEventListener("click", () => {
+            if (serviciosSubmenu && serviciosArrow) {
+                toggleSubmenu(serviciosSubmenu, serviciosArrow);
+            }
+        });
+
+        // Cerrar menú al hacer clic en los enlaces (excluyendo los toggles)
         mobileMenuLinks.forEach((link) => {
+            if (!link.id.includes("toggle")) {
+                link.addEventListener("click", closeMenu);
+            }
+        });
+
+        // Cerrar submenus y menú principal al hacer clic en enlaces de submenu
+        const submenuLinks = document.querySelectorAll("#productos-submenu a, #servicios-submenu a");
+        submenuLinks.forEach((link) => {
             link.addEventListener("click", closeMenu);
         });
 
@@ -428,6 +597,7 @@
         document.addEventListener("keydown", function (e) {
             if (
                 e.key === "Escape" &&
+                mobileMenu &&
                 !mobileMenu.classList.contains("-translate-x-full")
             ) {
                 closeMenu();

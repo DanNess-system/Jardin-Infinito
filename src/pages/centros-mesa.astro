@@ -1,0 +1,820 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/shared/Footer.astro";
+import Whatsapp from "../components/shared/Whatsapp.astro";
+---
+
+<Layout title="Centros de Mesa - Jardín Infinito">
+    <Whatsapp />
+
+    <!-- Header con navegación -->
+    <header class="bg-gradient-to-r from-[#3d6a32] to-[#93b889] py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a
+                    href="/"
+                    class="flex items-center gap-3 text-white hover:scale-105 transition-transform duration-300"
+                >
+                    <svg
+                        class="w-8 h-8"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    <span class="text-xl font-semibold">Volver al Inicio</span>
+                </a>
+
+                <div class="flex items-center gap-3">
+                    <img src="/logo-white.png" alt="Logo" class="h-10" />
+                    <h1 class="text-white text-2xl font-bold">
+                        Centros de Mesa
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="relative py-20 bg-[url('/centros-mesa.png')] bg-cover bg-center overflow-hidden"
+    >
+        <div class="absolute inset-0">
+            <div class="bg-pattern opacity-10"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div
+                    class="backdrop-blur-sm bg-white/50 rounded-2xl p-8 shadow-2xl"
+                >
+                    <h2
+                        class="text-6xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent mb-6 animate__animated animate__fadeInDown"
+                    >
+                        🌸 Centros de Mesa que Enamoran 🌸
+                    </h2>
+                    <p
+                        class="text-xl text-gray-700 leading-relaxed mb-8 animate__animated animate__fadeInUp animate__delay-1s"
+                    >
+                        Transforma cada mesa en una obra de arte con nuestros
+                        centros de mesa únicos y personalizados. Desde bodas
+                        elegantes hasta cenas íntimas, creamos piezas que
+                        capturan la esencia de tu celebración.
+                    </p>
+                    <div
+                        class="animate__animated animate__heartBeat animate__infinite"
+                    >
+                        <div
+                            class="inline-block bg-white rounded-full p-4 shadow-lg"
+                        >
+                            <svg
+                                class="w-12 h-12 text-rose-600"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de trabajos -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Galería de Nuestros Trabajos
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-6">
+                    <div
+                        class="relative group overflow-hidden rounded-2xl shadow-lg"
+                    >
+                        <img
+                            src="/centro-mesa-elegante.jpg"
+                            alt="Centro de mesa elegante"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="text-lg font-bold">Boda Clásica</h4>
+                                <p class="text-sm">Rosas blancas y eucalipto</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative group overflow-hidden rounded-2xl shadow-lg"
+                    >
+                        <img
+                            src="/centro-mesa-rustico.jpg"
+                            alt="Centro de mesa rústico"
+                            class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="text-lg font-bold">
+                                    Estilo Rústico
+                                </h4>
+                                <p class="text-sm">
+                                    Flores silvestres y madera
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div
+                        class="relative group overflow-hidden rounded-2xl shadow-lg"
+                    >
+                        <img
+                            src="/centro-mesa-moderno.jpg"
+                            alt="Centro de mesa moderno"
+                            class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="text-lg font-bold">
+                                    Diseño Moderno
+                                </h4>
+                                <p class="text-sm">
+                                    Suculentas y elementos geométricos
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative group overflow-hidden rounded-2xl shadow-lg"
+                    >
+                        <img
+                            src="/centro-mesa-tropical.jpg"
+                            alt="Centro de mesa tropical"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="text-lg font-bold">Tema Tropical</h4>
+                                <p class="text-sm">
+                                    Orquídeas y hojas exóticas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div
+                        class="relative group overflow-hidden rounded-2xl shadow-lg"
+                    >
+                        <img
+                            src="/centro-mesa-romantico.jpg"
+                            alt="Centro de mesa romántico"
+                            class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="text-lg font-bold">Romántico</h4>
+                                <p class="text-sm">Peonías rosadas y velas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative group overflow-hidden rounded-2xl shadow-lg"
+                    >
+                        <img
+                            src="/centro-mesa-festivo.jpg"
+                            alt="Centro de mesa festivo"
+                            class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        >
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h4 class="text-lg font-bold">Celebración</h4>
+                                <p class="text-sm">
+                                    Colores vibrantes y alegres
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Estilos de centros de mesa -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Estilos Únicos para Cada Ocasión
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Clásico Elegante -->
+                <div
+                    class="bg-gradient-to-br from-gray-50 to-slate-100 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-gray-700 to-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Clásico Elegante
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Diseños atemporales con flores premium y elementos
+                        sofisticados. Perfectos para bodas formales y eventos de
+                        gala.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-700 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Rosas premium y peonías</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-700 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Jarrones de cristal o porcelana</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-700 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Velas de cera natural</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-gray-700 rounded-full"></div>
+                            <span class="text-sm text-gray-600"
+                                >Follaje de eucalipto</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-gray-700"
+                            >$850</span
+                        >
+                        <span class="text-gray-500 text-sm block"
+                            >por centro de mesa</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Rústico Natural -->
+                <div
+                    class="bg-gradient-to-br from-amber-50 to-orange-100 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-amber-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Rústico Natural
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Estilo campestre con elementos naturales y flores
+                        silvestres. Ideal para bodas al aire libre y eventos
+                        casuales.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-amber-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Flores silvestres de temporada</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-amber-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Contenedores de madera o mimbre</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-amber-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Elementos naturales (ramas, musgo)</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-amber-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Velas artesanales</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-amber-600"
+                            >$620</span
+                        >
+                        <span class="text-gray-500 text-sm block"
+                            >por centro de mesa</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Moderno Minimalista -->
+                <div
+                    class="bg-gradient-to-br from-emerald-50 to-teal-100 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4
+                        class="text-2xl font-bold text-gray-800 mb-4 text-center"
+                    >
+                        Moderno Minimalista
+                    </h4>
+                    <p class="text-gray-600 mb-6 text-center">
+                        Líneas limpias y diseños geométricos con plantas
+                        suculentas y elementos contemporáneos.
+                    </p>
+
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Suculentas y cactus decorativos</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Contenedores geométricos</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Elementos metálicos o concreto</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-emerald-600 rounded-full">
+                            </div>
+                            <span class="text-sm text-gray-600"
+                                >Iluminación LED sutil</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-emerald-600"
+                            >$720</span
+                        >
+                        <span class="text-gray-500 text-sm block"
+                            >por centro de mesa</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Ocasiones especiales -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Centros de Mesa para Cada Ocasión
+            </h3>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Bodas -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">Bodas</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Diseños románticos y elegantes que reflejan el amor de
+                        la pareja y complementan la decoración general.
+                    </p>
+                    <div class="text-lg font-bold text-pink-600">
+                        Desde $650
+                    </div>
+                </div>
+
+                <!-- Cumpleaños -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0A1.5 1.5 0 013 15.546V12h18v3.546z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        Cumpleaños
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Centros alegres y coloridos que celebran la vida con
+                        flores vibrantes y elementos festivos.
+                    </p>
+                    <div class="text-lg font-bold text-purple-600">
+                        Desde $480
+                    </div>
+                </div>
+
+                <!-- Aniversarios -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-red-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        Aniversarios
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Arreglos románticos e íntimos que celebran el amor
+                        duradero con rosas y flores especiales.
+                    </p>
+                    <div class="text-lg font-bold text-red-600">Desde $580</div>
+                </div>
+
+                <!-- Eventos Corporativos -->
+                <div
+                    class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group text-center"
+                >
+                    <div
+                        class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300"
+                    >
+                        <svg
+                            class="w-8 h-8 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                            ></path>
+                        </svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-3">
+                        Eventos Corporativos
+                    </h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Diseños profesionales y sofisticados que reflejan la
+                        imagen corporativa con elegancia.
+                    </p>
+                    <div class="text-lg font-bold text-blue-600">
+                        Desde $420
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Proceso de diseño -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Nuestro Proceso de Diseño
+            </h3>
+
+            <div class="grid md:grid-cols-5 gap-8">
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        1
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Consulta
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Conversamos sobre tu evento, estilo, colores y
+                        presupuesto.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        2
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Propuesta
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Creamos bocetos y propuestas personalizadas para tu
+                        aprobación.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        3
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Selección
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Elegimos las flores más frescas y materiales de la mejor
+                        calidad.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        4
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Creación
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Nuestras floristas expertas elaboran cada centro con
+                        dedicación artesanal.
+                    </p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300"
+                    >
+                        5
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-4">
+                        Entrega
+                    </h4>
+                    <p class="text-gray-600 text-sm">
+                        Montamos los centros de mesa directamente en tu evento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoniales -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">
+                Testimoniales de Nuestros Clientes
+            </h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gradient-to-br from-rose-50 to-pink-100 rounded-2xl p-8 shadow-lg"
+                >
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Los centros de mesa de mi boda fueron absolutamente
+                        perfectos. Cada detalle fue cuidado al máximo y todos
+                        los invitados quedaron enamorados."
+                    </p>
+                    <div class="font-bold text-gray-800">Isabella Ramírez</div>
+                    <div class="text-sm text-gray-500">Novia</div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-rose-50 to-pink-100 rounded-2xl p-8 shadow-lg"
+                >
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Para el evento de mi empresa fueron la pieza clave.
+                        Elegantes, profesionales y que transmitían exactamente
+                        la imagen que queríamos proyectar."
+                    </p>
+                    <div class="font-bold text-gray-800">Alejandro Torres</div>
+                    <div class="text-sm text-gray-500">
+                        Director Eventos Corporativos
+                    </div>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-rose-50 to-pink-100 rounded-2xl p-8 shadow-lg"
+                >
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "El cumpleaños 50 de mi mamá fue mágico gracias a los
+                        hermosos centros de mesa. Capturaron perfectamente su
+                        personalidad alegre y elegante."
+                    </p>
+                    <div class="font-bold text-gray-800">Carmen López</div>
+                    <div class="text-sm text-gray-500">
+                        Organizadora de Eventos
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-[#3d6a32] to-[#93b889]">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold text-white mb-6">
+                ¿Listo para Crear Mesas Inolvidables?
+            </h3>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Conversemos sobre tu evento y diseñemos juntos centros de mesa
+                únicos que capturen la esencia de tu celebración.
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+                <a
+                    href="https://wa.me/5215512345678?text=Hola! Me interesan los centros de mesa personalizados. ¿Pueden ayudarme con mi evento?"
+                    class="inline-flex items-center gap-3 bg-white text-rose-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"
+                        ></path>
+                    </svg>
+                    Solicitar Cotización
+                </a>
+
+                <a
+                    href="mailto:centrosdemesa@jardininfinito.com"
+                    class="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white hover:text-rose-600 transition-all duration-300 transform hover:scale-105"
+                >
+                    <svg
+                        class="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        ></path>
+                    </svg>
+                    Enviar Consulta
+                </a>
+            </div>
+        </div>
+    </section>
+
+</Layout>
+
+<style>
+    .bg-pattern {
+        background-image: radial-gradient(
+            circle at 1px 1px,
+            rgba(244, 63, 94, 0.15) 1px,
+            transparent 0
+        );
+        background-size: 20px 20px;
+    }
+</style>
+
+<script>
+    // Animaciones en scroll
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate__fadeInUp");
+                }
+            });
+        });
+
+        document.querySelectorAll(".group").forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>

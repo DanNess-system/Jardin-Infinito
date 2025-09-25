@@ -1,0 +1,484 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/shared/Footer.astro";
+import Whatsapp from "../components/shared/Whatsapp.astro";
+---
+
+<Layout title="Plant Bar - Experiencia Única - Jardín Infinito">
+    <Whatsapp />
+    
+    <!-- Header con navegación -->
+    <header class="bg-gradient-to-r from-[#447a36] to-[#a6b8a1] py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <a href="/" class="flex items-center gap-3 text-white hover:scale-105 transition-transform duration-300">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    <span class="text-xl font-semibold">Volver al Inicio</span>
+                </a>
+                
+                <div class="flex items-center gap-3">
+                    <img src="/logo-white.png" alt="Logo" class="h-10">
+                    <h1 class="text-white text-2xl font-bold">Plant Bar Experience</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 bg-[url('/plant-bar.png')] bg-cover bg-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/30"></div>
+        <div class="absolute inset-0">
+            <div class="bg-pattern opacity-10"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="backdrop-blur-sm bg-white/50 rounded-2xl p-8 shadow-2xl">
+                    <h2 class="text-6xl font-bold bg-gradient-to-r from-[#2b4426] to-[#447a36] bg-clip-text text-transparent mb-6 animate__animated animate__fadeInDown">
+                        🌿 Plant Bar Experience 🌿
+                    </h2>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+                        Una experiencia única e interactiva donde tus invitados se convierten en artistas botánicos, 
+                        creando sus propias composiciones de plantas mientras disfrutan de un ambiente relajante y divertido.
+                    </p>
+                    <div class="animate__animated animate__bounce animate__infinite">
+                        <div class="inline-block bg-white rounded-full p-4 shadow-lg">
+                            <svg class="w-12 h-12 text-[#2b4426]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: ¿Qué es el Plant Bar? -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-6">¿Qué es el Plant Bar?</h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        El Plant Bar es una innovadora actividad donde transformamos cualquier evento en una experiencia botánica interactiva. 
+                        Montamos una estación completa con plantas, macetas, herramientas y todos los materiales necesarios para que tus invitados 
+                        creen sus propias composiciones vegetales.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Es perfecta para bodas, cumpleaños, eventos corporativos, baby showers, despedidas de soltera y cualquier celebración 
+                        donde quieras ofrecer algo único, memorable y lleno de vida.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-[#93b889] rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-[#2b4426]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Actividad interactiva y relajante</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-[#93b889] rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-[#2b4426]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Los invitados se llevan su creación a casa</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-[#93b889] rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-[#2b4426]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Incluye instructora especializada</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-[#93b889] rounded-full flex items-center justify-center">
+                                <svg class="w-4 h-4 text-[#2b4426]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Adaptable a cualquier tema o color</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="/IMG_1238.webp" alt="Plant Bar Experience" class="w-full rounded-2xl shadow-xl " />
+                    <div class="absolute -top-6 -right-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full w-20 h-20 flex items-center justify-center font-bold text-lg">
+                        🎨
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Cómo funciona -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">¿Cómo Funciona Nuestro Plant Bar?</h3>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#2b4426] to-[#447a36] rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                        1
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Montaje Completo</h4>
+                    <p class="text-gray-600">Montamos una estación completa con mesas, plantas, macetas, herramientas y materiales decorativos.</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#2b4426] to-[#447a36] rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                        2
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Instructora Especializada</h4>
+                    <p class="text-gray-600">Nuestra experta guía a los invitados en la creación de hermosas composiciones personalizadas.</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#2b4426] to-[#447a36] rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                        3
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Creación Libre</h4>
+                    <p class="text-gray-600">Los invitados eligen plantas, combinan colores y texturas creando su propia obra de arte viviente.</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#2b4426] to-[#447a36] rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                        4
+                    </div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Recuerdo Especial</h4>
+                    <p class="text-gray-600">Cada invitado se lleva su creación como un recuerdo vivo y duradero de tu celebración.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Tipos de Plant Bar -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">Tipos de Plant Bar Experience</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Plant Bar Suculentas -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center">Plant Bar Suculentas</h4>
+                    <p class="text-gray-600 mb-6 text-center">Perfectas para principiantes, resistentes y con formas únicas que crean composiciones espectaculares.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Múltiples variedades de suculentas</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Macetas cerámicas personalizables</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Elementos decorativos (piedras, musgo)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Duración: 45-60 minutos</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-green-600">$450</span>
+                        <span class="text-gray-500 text-sm block">por persona</span>
+                    </div>
+                </div>
+
+                <!-- Plant Bar Tropical -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-100 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center">Plant Bar Tropical</h4>
+                    <p class="text-gray-600 mb-6 text-center">Plantas exuberantes y coloridas que crean ambientes tropicales llenos de vida y frescura.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Plantas tropicales variadas</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Macetas de bambú o cerámica tropical</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Sustrato especializado</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Duración: 60-75 minutos</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-blue-600">$580</span>
+                        <span class="text-gray-500 text-sm block">por persona</span>
+                    </div>
+                </div>
+
+                <!-- Plant Bar Aromáticas -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-100 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center">Plant Bar Aromáticas</h4>
+                    <p class="text-gray-600 mb-6 text-center">Hierbas y plantas aromáticas que despiertan los sentidos y aportan beneficios terapéuticos.</p>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Lavanda, menta, albahaca, romero</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Macetas de terracota natural</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Tarjetas con usos y beneficios</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Duración: 45-60 minutos</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="text-center">
+                        <span class="text-2xl font-bold text-purple-600">$520</span>
+                        <span class="text-gray-500 text-sm block">por persona</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: ¿Qué incluye? -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">¿Qué Incluye Tu Plant Bar?</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Montaje Completo</h4>
+                    <p class="text-sm text-gray-600">Mesas, manteles, decoración y toda la infraestructura necesaria</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Plantas Premium</h4>
+                    <p class="text-sm text-gray-600">Selección cuidadosa de plantas sanas y hermosas para cada composición</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Materiales & Herramientas</h4>
+                    <p class="text-sm text-gray-600">Macetas, sustrato, herramientas de jardinería y elementos decorativos</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-gray-800 mb-2">Instructora Experta</h4>
+                    <p class="text-sm text-gray-600">Guía especializada que acompaña y enseña durante toda la experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de eventos anteriores -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">Eventos Plant Bar Anteriores</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+                    <img src="/plant-bar-boda.jpg" alt="Plant Bar en Boda" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-xl font-bold">Boda en Jardín</h4>
+                            <p class="text-sm">40 invitados - Plant Bar Suculentas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+                    <img src="/plant-bar-cumpleanos.jpg" alt="Plant Bar Cumpleaños" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-xl font-bold">Cumpleaños 30</h4>
+                            <p class="text-sm">25 invitados - Plant Bar Tropical</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl shadow-lg">
+                    <img src="/plant-bar-corporativo.jpg" alt="Plant Bar Corporativo" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h4 class="text-xl font-bold">Evento Corporativo</h4>
+                            <p class="text-sm">60 colaboradores - Plant Bar Aromáticas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoniales -->
+    <section class="py-16 bg-gradient-to-br from-purple-50 to-pink-100">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">Lo que Dicen de Nuestro Plant Bar</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"El Plant Bar fue el hit de mi boda. Todos los invitados amaron la experiencia y ahora tengo plantas de mi día especial en casa de mis seres queridos. ¡Increíble!"</p>
+                    <div class="font-bold text-gray-800">Sofía Martínez</div>
+                    <div class="text-sm text-gray-500">Novia - Plant Bar Suculentas</div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Para el evento de nuestra empresa fue perfecto. Los empleados se relajaron, se divirtieron y crearon algo hermoso. Una actividad team building excelente."</p>
+                    <div class="font-bold text-gray-800">Ricardo Hernández</div>
+                    <div class="text-sm text-gray-500">Director RH - Plant Bar Corporativo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center text-gray-800 mb-16">Preguntas Frecuentes</h3>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="border border-gray-200 rounded-xl p-6">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3">¿Cuánto tiempo dura la actividad?</h4>
+                    <p class="text-gray-600">Dependiendo del tipo de Plant Bar, la duración varía entre 45 y 75 minutos. Incluye una breve introducción, tiempo de creación y finalización con cuidados básicos.</p>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3">¿Cuál es el mínimo de personas?</h4>
+                    <p class="text-gray-600">Manejamos un mínimo de 10 personas para eventos privados. Para grupos más pequeños, contáctanos para evaluar opciones especiales.</p>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3">¿Qué necesitamos proporcionar nosotros?</h4>
+                    <p class="text-gray-600">Solo necesitas el espacio (interior o exterior cubierto) y acceso a agua corriente. Nosotros llevamos todo lo demás: mesas, sillas, materiales y plantas.</p>
+                </div>
+
+                <div class="border border-gray-200 rounded-xl p-6">
+                    <h4 class="text-lg font-bold text-gray-800 mb-3">¿Se puede personalizar según nuestro tema?</h4>
+                    <p class="text-gray-600">¡Por supuesto! Adaptamos colores de macetas, tipos de plantas y decoración según tu tema, colores corporativos o estilo del evento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-gradient-to-r from-[#447a36] to-[#a6b8a1]">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold text-white mb-6">¿Listo para una Experiencia Única?</h3>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Convierte tu evento en una experiencia memorable con nuestro Plant Bar. Tus invitados se divertirán y se llevarán un recuerdo vivo de tu celebración.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5215512345678?text=Hola! Me interesa contratar el Plant Bar para mi evento. ¿Pueden darme más información?" 
+                   class="inline-flex items-center gap-3 bg-white text-purple-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                    </svg>
+                    Cotizar Mi Plant Bar
+                </a>
+                
+                <a href="mailto:eventos@jardininfinito.com" class="inline-flex items-center gap-3 bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white hover:text-purple-600 transition-all duration-300 transform hover:scale-105">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Enviar Propuesta
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+</Layout>
+
+<style>
+    .bg-pattern {
+        background-image: radial-gradient(circle at 1px 1px, rgba(147, 51, 234, 0.15) 1px, transparent 0);
+        background-size: 20px 20px;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+</style>
+
+<script>
+    // Animaciones en scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__fadeInUp');
+                }
+            });
+        });
+
+        document.querySelectorAll('.group').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>

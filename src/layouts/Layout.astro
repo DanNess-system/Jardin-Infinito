@@ -1,7 +1,9 @@
 ---
 // filepath: /Users/nestorbasavedavalos/Documents/jardin-infinito/src/layouts/Layout.astro
 import '../styles/global.css';
+import '../styles/components.css';
 import 'animate.css';
+import Footer from '../components/shared/Footer.astro';
 ---
 
 <!doctype html>
@@ -15,6 +17,7 @@ import 'animate.css';
 	</head>
 	<body>
 		<slot />
+		<Footer />
 	</body>
 </html>
 
