@@ -1,0 +1,35 @@
+---
+import BlogLoader from './BlogLoader';
+---
+
+<section id="blog" class="py-20 bg-gradient-to-br from-lime-50 via-emerald-50 to-teal-50">
+    <div class="container mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-secondary mb-4 animate__animated animate__fadeInUp">
+                Nuestro Blog
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s">
+                Consejos, tendencias y todo sobre el mundo de las plantas
+            </p>
+        </div>
+
+        <!-- Loader de Blog (últimas 3 entradas) -->
+        <div class="animate__animated animate__fadeInUp animate__delay-2s">
+            <BlogLoader client:load maxPosts={3} showOnlyRecent={true} />
+        </div>
+
+        <!-- Botón Ver Todas -->
+        <div class="text-center mt-12">
+            <a
+                href="/blog"
+                class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+                Ver Todas las Entradas
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
